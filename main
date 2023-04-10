@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/basic.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -40,7 +41,7 @@ class _HomeState extends State<Home> {
                Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                {
                  setState(() {});
-                 if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                 if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                  listadeloqueescribe.add("√");
                  Loescrito = "";
 
@@ -48,31 +49,31 @@ class _HomeState extends State<Home> {
                Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                {
                  setState(() {});
-                 if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                 if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                  listadeloqueescribe.add("^2");
                  Loescrito = "";
                  },child: const Text("x²",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                     if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("/");
                      Loescrito = "";
                    },child: const Text("÷",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);}; 
+                     if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);}; 
                      listadeloqueescribe.add("*");
                      Loescrito = "";
                    },child: const Text("*",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                     if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("+");
                      Loescrito = "";
                    },child: const Text("+",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                     if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("-");
                      Loescrito = "";
                    },child: const Text("-",style: TextStyle(fontSize: 60)))),
@@ -101,16 +102,76 @@ class _HomeState extends State<Home> {
                          Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {setState(() {Loescrito = Loescrito+("0");});},child: const Text("0"))),
                          Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                          {
-                           if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
+                           if (Loescrito.isEmpty){}else{listadeloqueescribe.add(Loescrito);};
                            Loescrito = "";
                            var largolista = listadeloqueescribe.length;
+                           
+                           int listadeloqueescribefinal(int x){
+                            if (largolista <= 3){
+                                return listadeloqueescribe;
+                            }else{
+                                return calculadora (listadeloqueescribe);
+                            }
+                           };
+                           string calculadora(listadeloqueescribe){
+                           var valor1 = listadeloqueescribe[0];
+                           var simbolo = listadeloqueescribe[1];
+                           var valor2 = listadeloqueescribe[2];
+                           switch(simbolo) { 
+                           case +: { 
+                            if !(largolista>=3){Loescrito = "syntax error";
+                           break;};  
+                            var result = valor1 + valor2
+                             Loescrito = result
+                                // statements; 
+                            } 
+                            break; 
+                            case -: { 
+                                if !(largolista>=3){Loescrito = "syntax error";
+                           break;}; 
+                            var result = valor1 - valor2
+                             Loescrito = result}
+                            break; 
+                            case *: { 
+                                if !(largolista>=3){Loescrito = "syntax error";
+                           break;}; 
+                            var result = valor1 * valor2
+                             Loescrito = result
+                                // statements; 
+                            } 
+                            break;
+                            case ÷: { 
+                                if !(largolista>=3){Loescrito = "syntax error";
+                           break;}; 
+                            var result = valor1 / valor2
+                             Loescrito = result
+                                // statements; 
+                            } 
+                            break;   
+                            case x²: { 
+                                if !(largolista>=2){Loescrito = "syntax error";
+                           break;}; 
+                            var result = valor1*valor1
+                             Loescrito = result
+                                // statements; 
+                            } 
+                            break;   
+                            default: { 
+                                if (largolista>=2 ){
+                            var result = sqrt(simbolo);
+                             Loescrito = result}else{var result = valor1*sqrt(valor2);Loescrito = result;};
+                                // statements; 
+                               
+                            }
+                            break; 
+                            } 
                            for (var i=0; largolista>i;i++){
                              print (listadeloqueescribe[0+i]);
                              var listadeloqueescribio1 = listadeloqueescribe;
 
                            };
 
-                           }
+                           }}
 
 
                              ,child: const Text("="))),
