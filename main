@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                {
                  setState(() {});
-                 listadeloqueescribe.add(Loescrito);
+                 if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                  listadeloqueescribe.add("√");
                  Loescrito = "";
 
@@ -48,31 +48,31 @@ class _HomeState extends State<Home> {
                Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                {
                  setState(() {});
-                 listadeloqueescribe.add(Loescrito);
+                 if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                  listadeloqueescribe.add("^2");
                  Loescrito = "";
                  },child: const Text("x²",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     listadeloqueescribe.add(Loescrito);
+                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("/");
                      Loescrito = "";
                    },child: const Text("÷",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     listadeloqueescribe.add(Loescrito);
+                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);}; 
                      listadeloqueescribe.add("*");
                      Loescrito = "";
                    },child: const Text("*",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     listadeloqueescribe.add(Loescrito);
+                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("+");
                      Loescrito = "";
                    },child: const Text("+",style: TextStyle(fontSize: 60)))),
                    Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {
                      setState(() {});
-                     listadeloqueescribe.add(Loescrito);
+                     if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                      listadeloqueescribe.add("-");
                      Loescrito = "";
                    },child: const Text("-",style: TextStyle(fontSize: 60)))),
@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                          Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: () {setState(() {Loescrito = Loescrito+("0");});},child: const Text("0"))),
                          Container(decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black)),child: TextButton(onPressed: ()
                          {
-                           listadeloqueescribe.add(Loescrito);
+                           if Loescrito.isEmpty{}else{listadeloqueescribe.add(Loescrito);};
                            Loescrito = "";
                            var largolista = listadeloqueescribe.length;
                            for (var i=0; largolista>i;i++){
